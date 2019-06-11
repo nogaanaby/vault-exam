@@ -1,0 +1,32 @@
+[
+    {
+        "name": "S1",
+        "transitions": [
+            {
+                "to": "S2",
+                "on": "3",
+                "action": null
+            }
+        ]
+    },
+    {
+        "name": "S2",
+        "transitions": [
+            {
+                "to": "S3",
+                "on": "4",
+                "action": null
+            }
+        ]
+    },
+    {
+        "name": "S3",
+        "transitions": [
+            {
+                "to": "OPEN",
+                "on": "9",
+                "action": "openVault"
+            }
+        ]
+    } 
+]
