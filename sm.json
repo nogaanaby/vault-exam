@@ -1,32 +1,122 @@
 [
     {
-        "name": "S1",
+        "name": "FirstTry_D1",
         "transitions": [
             {
-                "to": "S2",
+                "to": "FirstTry_D2",
+                "on": "1",
+                "action": null
+            },
+            {
+                "to": "SecondTry_D1",
+                "on": "2",
+                "action": null
+            },
+            {
+                "to": "SecondTry_D1",
                 "on": "3",
                 "action": null
             }
         ]
     },
     {
-        "name": "S2",
+        "name": "FirstTry_D2",
         "transitions": [
             {
-                "to": "S3",
-                "on": "4",
+                "to": "FirstTry_D3",
+                "on": "2",
+                "action": null
+            },
+            {
+                "to": "secondTry_D2",
+                "on": "1",
+                "action": null
+            },
+            {
+                "to": "secondTry_D1",
+                "on": "3",
                 "action": null
             }
         ]
     },
     {
-        "name": "S3",
+        "name": "FirstTry_D3",
         "transitions": [
             {
                 "to": "OPEN",
-                "on": "9",
+                "on": "3",
                 "action": "openVault"
+            },
+            {
+                "to": "secondTry_D2",
+                "on": "1",
+                "action": null
+            },
+            {
+                "to": "secondTry_D1",
+                "on": "2",
+                "action": null
             }
         ]
-    } 
+    },
+    {
+        "name": "secondTry_D1",
+        "transitions": [
+            {
+                "to": "secondTry_D2",
+                "on": "1",
+                "action": null
+            },
+            {
+                "to": "LOCK",
+                "on": "2",
+                "action": "lockUser"
+            },
+            {
+                "to": "LOCK",
+                "on": "3",
+                "action": "lockUser"
+            }
+        ]
+    },
+    {
+        "name": "secondTry_D2",
+        "transitions": [
+            {
+                "to": "LOCK",
+                "on": "1",
+                "action": "lockUser"
+            },
+            {
+                "to": "secondTry_D3",
+                "on": "2",
+                "action": null
+            },
+            {
+                "to": "LOCK",
+                "on": "3",
+                "action": "lockUser"
+            }
+        ]
+    },
+    {
+        "name": "secondTry_D3",
+        "transitions": [
+            {
+                "to": "OPEN",
+                "on": "3",
+                "action": "openVault"
+            },
+            {
+                "to": "LOCK",
+                "on": "2",
+                "action": "lockUser"
+            },
+            {
+                "to": "LOCK",
+                "on": "1",
+                "action": "lockUser"
+            }
+        ]
+    }
 ]

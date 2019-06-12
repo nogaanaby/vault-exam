@@ -1,10 +1,10 @@
 module.exports = {
 
-  openVault = () => {
+  openVault: () => {
     console.log("congrads, you open the vault")
   },
 
-  lockUser = () => {
+  lockUser: function() {
     console.log("oops, you were locked")
   }
 }
